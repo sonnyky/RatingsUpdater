@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'RatingScrape/common.css' %}" >
+    <title>Dashboard</title>
+
+
+</head>
+<body>
+    <h1>Today is {% now "jS F Y H:i" %}</h1>
+
+{% for rate in ratings %}
+    <div class="rating-box">
+        <h2>Title : {{ rate.title }}</h2>
+        <h2>Date added : {{ rate.time_stamp }}</h2>
+        <h2>Ratings (Stars) : {{ rate.star_number }}</h2>
+        <h2>ID : {{ rate.id }}</h2>
+        <form action="{% url 'RatingScrape:delete_entry' rate.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete" />
+        </form>
+    </div>
+{% endfor %}
+</body>
+</html>

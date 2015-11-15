@@ -28,7 +28,7 @@ def index(request):
     context['ratings'] = RatingStars.objects.all()
     return render(request, 'RatingScrape/dashboard.html', context)
 
-def getRatings(request):
+def get_ratings(request):
 
     RatingStars.objects.create(
         star_number = content_data['results'][0]['averageUserRatingForCurrentVersion'],

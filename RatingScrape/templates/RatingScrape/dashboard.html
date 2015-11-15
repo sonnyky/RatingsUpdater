@@ -12,6 +12,11 @@
 </head>
 <body>
     <h1>Today is {% now "jS F Y H:i" %}</h1>
+      <form action="{% url 'RatingScrape:get_ratings' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Get Ratings" />
+        </form>
+
 
 {% for rate in ratings %}
     <div class="rating-box">

@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'RatingsUpdater.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'django_ratings',
+        'USER':'postgres',
+        'PASSWORD':'postgres',
+        'HOST':'localhost',
+        'PORT':'5432'
     }
 }
 
@@ -88,7 +92,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'JST'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 

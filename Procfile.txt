@@ -1,1 +1,0 @@
-web: gunicorn RatingScrape.wsgi --log-file -

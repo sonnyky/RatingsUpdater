@@ -1,5 +1,4 @@
 import datetime
-#import itunes ; this is not working until python-itunes supports python 3.x
 
 from urllib.request import urlopen
 from django.db import models

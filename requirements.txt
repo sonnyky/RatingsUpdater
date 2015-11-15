@@ -1,7 +1,6 @@
 arrow==0.7.0
 Django==1.8.5
 psycopg2==2.6.1
-py-mysql2pgsql==0.1.6
 python-dateutil==2.4.2
 python-itunes==1.0
 pytz==2015.7

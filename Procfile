@@ -1,1 +1,1 @@
-"web: python RatingScrape.py" 
+web: gunicorn RatingsUpdater.wsgi:application --log-file -

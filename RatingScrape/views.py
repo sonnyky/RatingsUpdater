@@ -31,7 +31,7 @@ def index(request):
 def get_ratings(request):
 
     RatingStars.objects.create(
-        star_number = content_data['results'][0]['averageUserRatingForCurrentVersion'],
+        star_number = content_data['results'][0]['averageUserRating'],
         title = content_data['results'][0]['trackName'],
         text = "Other text",
     )

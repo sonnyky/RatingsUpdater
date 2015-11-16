@@ -9,3 +9,4 @@ pyyaml==3.11
 six==1.10.0
 times==0.7
 virtualenv==13.1.2
+whitenoise==2.0.6

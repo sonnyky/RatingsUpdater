@@ -37,7 +37,7 @@ def get_ratings(request):
     )
     context = dict()
     context['ratings'] = RatingStars.objects.all()
-    return render(request, 'RatingScrape/dashboard.html', context)
+    return HttpResponseRedirect(reverse("RatingScrape:index"))
 
 def delete_entry(request, entry_id):
     print("Delete" + entry_id + "++++++++++++++++++++++++++++++++++++++++++++++++++++")

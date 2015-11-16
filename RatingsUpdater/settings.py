@@ -78,9 +78,7 @@ WSGI_APPLICATION = 'RatingsUpdater.wsgi.application'
 
 #watch out when deploying to heroku and debugging on local, must change HOST and PORT
 
-DATABASES = {'default': dj_database_url.config()}
-
-
+DATABASES = {'default': dj_database_url.config(default='postgres://postgres:postgres@localhost:5432/django_ratings')}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -75,16 +76,20 @@ WSGI_APPLICATION = 'RatingsUpdater.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django_ratings',
-        'USER':'postgres',
-        'PASSWORD':'postgres',
-        'HOST':'localhost',
-        'PORT':'5432'
+#watch out when deploying to heroku and debugging on local, must change HOST and PORT
+
+DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+if bool(os.environ.get('LOCAL_DEV', False)):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'django_ratings',
+            'USER':'postgres',
+            'PASSWORD':'postgres',
+            'HOST':'localhost',
+            'PORT':'5432'
+        }
     }
-}
 
 
 # Internationalization

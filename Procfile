@@ -1,1 +1,1 @@
-web: gunicorn RatingScrape.wsgi:application --log-file -
+web: gunicorn RatingsUpdater.wsgi --log-file -

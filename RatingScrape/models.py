@@ -22,3 +22,10 @@ class RatingStars(models.Model):
     def update_field(self, key, value):
         getattr(self, key)
         setattr(self, key, value)
+
+class UserReviewComments(models.Model):
+    author = models.TextField(max_length= 255, default = "DEFAULT")
+    comment = models.TextField(max_length= 255, default="DEFAULT")
+
+    def __str__(self):
+        return str(self.author)

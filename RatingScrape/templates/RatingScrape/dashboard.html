@@ -7,17 +7,33 @@
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'RatingScrape/common.css' %}" >
     <title>Dashboard</title>
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'RatingScrape/touch_input.js' %}"></script>
 </head>
 <body>
     <h1>Today is {% now "jS F Y H:i" %}</h1>
+
+    <h1>
       <form action="{% url 'RatingScrape:get_ratings' %}" method="post">
             {% csrf_token %}
             <input type="submit" value="Get Ratings" />
         </form>
 
+        <form action="{% url 'RatingScrape:get_reviews' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Get Reviews" />
+        </form>
 
+    </h1>
+     <h1>
+            <ul class="nav nav-pills">
+            <li id="ratings_tab" class="active"><a href="#">Ratings</a></li>
+            <li id="reviews_tab" ><a href="#">Reviews</a></li>
+            <li id="others_tab"><a href="#">Others(Not ready)</a></li>
+            </ul>
+     </h1>
+
+    <div id="user_ratings">
 {% for rate in ratings %}
     <div class="rating-box">
         <h2>Title : {{ rate.title }}</h2>
@@ -30,5 +46,23 @@
         </form>
     </div>
 {% endfor %}
+    </div>
+
+<div id="user_reviews">
+    {% for review in reviews %}
+    <div class="well">
+        <ul class="list-group">
+          <li class="list-group-item">Author :  {{ review.author }}</li>
+          <li class="list-group-item">Comment :  {{ review.comment }}</li>
+            <li class="list-group-item">ID :  {{ review.id }}</li>
+        </ul>
+        <form action="{% url 'RatingScrape:delete_review_entry' review.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete" />
+        </form>
+    </div>
+    {% endfor %}
+</div>
+
 </body>
 </html>

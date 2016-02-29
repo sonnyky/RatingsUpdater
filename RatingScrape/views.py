@@ -16,9 +16,9 @@ content_data = json.loads(content)
 # This is for getting user comments
 user_comments = urlopen("http://itunes.apple.com/jp/rss/customerreviews/id="+str(app_id)+"/json").read().decode("utf8")
 user_comments_data = json.loads(user_comments)
-print(user_comments_data['feed']['author']['name']['label'])
-print(user_comments_data['feed']['entry'][1]['author']['name']['label'])
-print(user_comments_data['feed']['entry'][1]['content']['label'])
+#print(user_comments_data['feed']['author']['name']['label'])
+#print(user_comments_data['feed']['entry'][1]['author']['name']['label'])
+#print(user_comments_data['feed']['entry'][1]['content']['label'])
 
 # Create your views here.
 def index(request):
@@ -55,6 +55,11 @@ def delete_review_entry(request, review_id):
     UserReviewComments.objects.get(pk=review_id).delete()
     return HttpResponseRedirect(reverse("RatingScrape:index"))
 
+def delete_all_review_entry(request):
+    print("Deleting all reviews from users")
+    UserReviewComments.objects.all().delete()
+    return HttpResponseRedirect(reverse("RatingScrape:index"))
+
 def get_reviews(request):
 
     for i in user_comments_data['feed']['entry']:
@@ -63,7 +68,6 @@ def get_reviews(request):
                 author = i['author']['name']['label'],
                 comment = i['content']['label'],
             )
-            print(i['author']['name']['label'])
     context = dict()
     context['reviews'] = UserReviewComments.objects.all()
     return HttpResponseRedirect(reverse("RatingScrape:index"))

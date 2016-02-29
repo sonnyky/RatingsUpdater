@@ -23,6 +23,10 @@
             {% csrf_token %}
             <input type="submit" value="Get Reviews" />
         </form>
+         <form action="{% url 'RatingScrape:delete_all_review_entry' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete All Reviews" />
+        </form>
 
     </h1>
      <h1>

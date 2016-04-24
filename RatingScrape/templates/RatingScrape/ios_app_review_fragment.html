@@ -1,0 +1,22 @@
+
+<button onclick="getReviews()" id="get_reviews_button">Get Reviews</button>
+ <form action="{% url 'RatingScrape:delete_all_review_entry' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Delete All Reviews" />
+</form>
+
+<div id="user_reviews">
+    {% for review in reviews %}
+    <div class="well">
+        <ul class="list-group">
+          <li class="list-group-item">Author :  {{ review.author }}</li>
+          <li class="list-group-item">Comment :  {{ review.comment }}</li>
+            <li class="list-group-item">ID :  {{ review.id }}</li>
+        </ul>
+        <form action="{% url 'RatingScrape:delete_review_entry' review.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete" />
+        </form>
+    </div>
+    {% endfor %}
+</div>

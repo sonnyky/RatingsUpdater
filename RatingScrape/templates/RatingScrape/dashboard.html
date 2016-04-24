@@ -13,60 +13,72 @@
 <body>
     <h1>Today is {% now "jS F Y H:i" %}</h1>
 
-    <h1>
-      <form action="{% url 'RatingScrape:get_ratings' %}" method="post">
+     <h1>
+            <ul class="nav nav-pills">
+            <li id="ratings_tab" onclick="ratingView()" class="active"><a>Ratings</a></li>
+            <li id="reviews_tab" onclick="reviewView()"><a>Reviews</a></li>
+            <li id="others_tab"><a>Others(Not ready)</a></li>
+            </ul>
+     </h1>
+
+    <div id="ios_app_rating">
+        <form action="{% url 'RatingScrape:get_ratings' %}" method="post">
             {% csrf_token %}
             <input type="submit" value="Get Ratings" />
         </form>
 
-        <form action="{% url 'RatingScrape:get_reviews' %}" method="post">
-            {% csrf_token %}
-            <input type="submit" value="Get Reviews" />
-        </form>
-         <form action="{% url 'RatingScrape:delete_all_review_entry' %}" method="post">
-            {% csrf_token %}
-            <input type="submit" value="Delete All Reviews" />
-        </form>
-
-    </h1>
-     <h1>
-            <ul class="nav nav-pills">
-            <li id="ratings_tab" class="active"><a href="#">Ratings</a></li>
-            <li id="reviews_tab" ><a href="#">Reviews</a></li>
-            <li id="others_tab"><a href="#">Others(Not ready)</a></li>
-            </ul>
-     </h1>
-
-    <div id="user_ratings">
-{% for rate in ratings %}
-    <div class="rating-box">
-        <h2>Title : {{ rate.title }}</h2>
-        <h2>Date added : {{ rate.time_stamp }}</h2>
-        <h2>Ratings (Stars) : {{ rate.star_number }}</h2>
-        <h2>ID : {{ rate.id }}</h2>
-        <form action="{% url 'RatingScrape:delete_entry' rate.id %}" method="post">
-            {% csrf_token %}
-            <input type="submit" value="Delete" />
-        </form>
-    </div>
-{% endfor %}
     </div>
 
-<div id="user_reviews">
-    {% for review in reviews %}
-    <div class="well">
-        <ul class="list-group">
-          <li class="list-group-item">Author :  {{ review.author }}</li>
-          <li class="list-group-item">Comment :  {{ review.comment }}</li>
-            <li class="list-group-item">ID :  {{ review.id }}</li>
-        </ul>
-        <form action="{% url 'RatingScrape:delete_review_entry' review.id %}" method="post">
-            {% csrf_token %}
-            <input type="submit" value="Delete" />
-        </form>
+    <div id="ios_app_review">
+
     </div>
-    {% endfor %}
-</div>
 
 </body>
+
+<script>
+    function reviewView(){
+        console.log("Javascript");
+        $.ajax({
+            type: "GET",
+            url: "/ios_app_review_fragment/",
+            success: function (response) {
+                console.log(response);
+                $("#ios_app_rating").hide();
+                $("#ios_app_review").show();
+                $("#ios_app_review").html(response);
+                $("#reviews_tab").addClass("active");
+                $("#ratings_tab").removeClass();
+            }
+        });
+    }
+
+    function ratingView(){
+        console.log("Javascript");
+        $.ajax({
+            type: "GET",
+            url: "/ios_app_rating_fragment/",
+            success: function (response) {
+                console.log(response);
+                $("#ios_app_review").hide();
+                $("#ios_app_rating").show();
+                $("#ios_app_rating").html(response);
+                $("#reviews_tab").removeClass();
+                $("#ratings_tab").addClass("active");
+            }
+        });
+    }
+
+    function getReviews(){
+        $.ajax({
+            type: "GET",
+            url: "/get_reviews/",
+            success: function (response) {
+                console.log(response);
+
+            }
+        });
+    }
+
+</script>
+
 </html>

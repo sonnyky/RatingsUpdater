@@ -8,76 +8,61 @@
     <link rel="stylesheet" type="text/css" href="{% static 'RatingScrape/common.css' %}" >
     <title>Dashboard</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="{% static 'RatingScrape/touch_input.js' %}"></script>
+    <script type="text/javascript" src="{% static 'util/touchClass.js' %}"></script>
+    <script type="text/javascript" src="{% static 'RatingScrape/dashboard.js' %}"></script>
 </head>
 <body>
     <h1>Today is {% now "jS F Y H:i" %}</h1>
 
      <h1>
             <ul class="nav nav-pills">
-            <li id="ratings_tab" onclick="ratingView()" class="active"><a>Ratings</a></li>
-            <li id="reviews_tab" onclick="reviewView()"><a>Reviews</a></li>
+            <li id="ratings_tab" class="active"><a>Ratings</a></li>
+            <li id="reviews_tab"><a>Reviews</a></li>
             <li id="others_tab"><a>Others(Not ready)</a></li>
             </ul>
      </h1>
 
-    <div id="ios_app_rating">
+    <div id="ios_app_get_rating_btn">
         <form action="{% url 'RatingScrape:get_ratings' %}" method="post">
             {% csrf_token %}
             <input type="submit" value="Get Ratings" />
         </form>
-
     </div>
 
-    <div id="ios_app_review">
+    <div id="ios_app_rating">
+        <div class="user_ratings">
+            {% for rate in ratings %}
+                <div class="rating-box">
+                    <h2>Title : {{ rate.title }}</h2>
+                    <h2>Date added : {{ rate.time_stamp }}</h2>
+                    <h2>Ratings for current version (Stars) : {{ rate.star_number }}</h2>
+                    <h2>ID : {{ rate.id }}</h2>
+                    <form action="{% url 'RatingScrape:delete_entry' rate.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="Delete" />
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div id="ios_app_get_review_btn" style="display:none">
+        <button id="get_reviews_button">Get Reviews</button>
+         <form action="{% url 'RatingScrape:delete_all_review_entry' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete All Reviews" />
+        </form>
+    </div>
+    <div id="ios_app_review" style="display:none">
 
     </div>
 
 </body>
 
 <script>
-    function reviewView(){
-        console.log("Javascript");
-        $.ajax({
-            type: "GET",
-            url: "/ios_app_review_fragment/",
-            success: function (response) {
-                console.log(response);
-                $("#ios_app_rating").hide();
-                $("#ios_app_review").show();
-                $("#ios_app_review").html(response);
-                $("#reviews_tab").addClass("active");
-                $("#ratings_tab").removeClass();
-            }
-        });
-    }
-
-    function ratingView(){
-        console.log("Javascript");
-        $.ajax({
-            type: "GET",
-            url: "/ios_app_rating_fragment/",
-            success: function (response) {
-                console.log(response);
-                $("#ios_app_review").hide();
-                $("#ios_app_rating").show();
-                $("#ios_app_rating").html(response);
-                $("#reviews_tab").removeClass();
-                $("#ratings_tab").addClass("active");
-            }
-        });
-    }
-
-    function getReviews(){
-        $.ajax({
-            type: "GET",
-            url: "/get_reviews/",
-            success: function (response) {
-                console.log(response);
-
-            }
-        });
-    }
+   $(document).ready(function(){
+			new dashboard.dashboardClass();
+		})
 
 </script>
 

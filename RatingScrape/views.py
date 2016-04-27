@@ -90,10 +90,12 @@ def get_reviews(request):
                 comment = i['content']['label'],
             )
     context = dict()
-    #context['reviews'] = UserReviewComments.objects.all()
     context['reviews'] = serializers.serialize('json', UserReviewComments.objects.all())
     struct = json.loads(context['reviews'])
     return HttpResponse(json.dumps(struct), content_type='application/json')
+
+def go_to_top_page(request):
+    return HttpResponseRedirect(reverse("RatingScrape:index"))
 
 def get_json(request):
 

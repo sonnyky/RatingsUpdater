@@ -20,9 +20,6 @@ content_data = json.loads(content)
 # This is for getting user comments from iTunes
 user_comments = urlopen("http://itunes.apple.com/jp/rss/customerreviews/id="+str(app_id)+"/json").read().decode("utf8")
 user_comments_data = json.loads(user_comments)
-#print(user_comments_data['feed']['author']['name']['label'])
-#print(user_comments_data['feed']['entry'][1]['author']['name']['label'])
-#print(user_comments_data['feed']['entry'][1]['content']['label'])
 
 #This is for getting app ratings from Google Play
 android_app_id = "com.snkplaymore.android014"
@@ -35,11 +32,6 @@ for item in android_app_rating:
 # Create your views here.
 def index(request):
     RatingStars.objects.all()
-    #for key, value in content_data.items():
-    #   ob.update_field(key, value)
-    #   ob.save(update_fields=content_data.keys())
-
-    #objects.all() returns a dictionary so we need to return the appropriate object type
     context = dict()
     context['ratings'] = RatingStars.objects.all()
     return render(request, 'RatingScrape/dashboard.html', context)
@@ -68,27 +60,35 @@ def get_ratings(request):
     return HttpResponseRedirect(reverse("RatingScrape:index"))
 
 def delete_entry(request, entry_id):
-    print("Delete" + entry_id + "++++++++++++++++++++++++++++++++++++++++++++++++++++")
     RatingStars.objects.get(pk=entry_id).delete()
     return HttpResponseRedirect(reverse("RatingScrape:index"))
 
 def delete_review_entry(request, review_id):
-    print("Delete review" + review_id + "++++++++++++++++++++++++++++++++++++++++++++++++++++")
     UserReviewComments.objects.get(pk=review_id).delete()
     return HttpResponseRedirect(reverse("RatingScrape:index"))
 
 def delete_all_review_entry(request):
-    print("Deleting all reviews from users")
     UserReviewComments.objects.all().delete()
     return HttpResponseRedirect(reverse("RatingScrape:index"))
 
-def get_reviews(request):
+def add_review_to_table_if_new_and_unique():
     for i in user_comments_data['feed']['entry']:
         if 'author' in i:
-            UserReviewComments.objects.create(
-                author = i['author']['name']['label'],
-                comment = i['content']['label'],
-            )
+            if UserReviewComments.objects.filter(review_id=i['id']['label']):
+                pass
+            else:
+                UserReviewComments.objects.create(
+                    author = i['author']['name']['label'],
+                    comment = i['content']['label'],
+                    review_id = i['id']['label'],
+                    rating_given_by_user = i['im:rating']['label'],
+                    version_rated = i['im:version']['label']
+                )
+
+    return HttpResponse("OK")
+
+def get_reviews(request):
+    add_review_to_table_if_new_and_unique()
     context = dict()
     context['reviews'] = serializers.serialize('json', UserReviewComments.objects.all())
     struct = json.loads(context['reviews'])

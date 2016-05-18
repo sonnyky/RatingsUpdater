@@ -19,8 +19,15 @@ var dashboard;
                     _this.getReviews();
                 }
             };
+            var rating_view_btn_param = {
+                target: "#ratings_tab",
+                callback_end: function () {
+                    _this.ratingsView();
+                }
+            };
             new util.touchClass(review_tab_touch_param);
             new util.touchClass(get_review_btn_param);
+            new util.touchClass(rating_view_btn_param);
         }
         dashboardClass.prototype.reviewView = function () {
             $("#ios_app_rating").hide();
@@ -36,28 +43,28 @@ var dashboard;
                 type: "GET",
                 url: "/ios_app_review_fragment/",
                 success: function (response) {
-                    console.log(response);
                     $("#ios_app_review").html(response);
                 }
             });
         };
         dashboardClass.prototype.getReviews = function () {
+            var _this = this;
             console.log("Getting reviews");
             $.ajax({
                 type: "GET",
                 url: "/get_reviews/",
-                success: function (response) {
-                    console.log(response);
+                success: function () {
+                    _this.refreshReviews();
                 }
             });
         };
-        dashboardClass.prototype.ratingView = function () {
+        dashboardClass.prototype.ratingsView = function () {
             $.ajax({
                 type: "GET",
                 url: "/ios_app_rating_fragment/",
                 success: function (response) {
-                    console.log(response);
                     $("#ios_app_review").hide();
+                    $("#ios_app_get_review_btn").hide();
                     $("#ios_app_rating").show();
                     $("#ios_app_get_rating_btn").show();
                     $("#ios_app_rating").html(response);

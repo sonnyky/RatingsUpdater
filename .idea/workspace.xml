@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="390101b0-21ef-4e98-a008-7655c4325f0e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RatingScrape/views/filter_methods.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RatingScrape/views/old_views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RatingScrape/views/sort_methods.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RatingScrape/views.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/RatingScrape/__init__.py" afterPath="$PROJECT_DIR$/RatingScrape/views/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RatingScrape/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/static/RatingScrape/dashboard.js" afterPath="$PROJECT_DIR$/RatingScrape/static/RatingScrape/dashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/static/RatingScrape/dashboard.js.map" afterPath="$PROJECT_DIR$/RatingScrape/static/RatingScrape/dashboard.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/static/RatingScrape/dashboard.ts" afterPath="$PROJECT_DIR$/RatingScrape/static/RatingScrape/dashboard.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/dashboard.html" afterPath="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/urls.py" afterPath="$PROJECT_DIR$/RatingScrape/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingsUpdater/settings.py" afterPath="$PROJECT_DIR$/RatingsUpdater/settings.py" />
     </list>
     <ignored path="RatingsUpdater.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,7 +68,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RatingScrape/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="352">
@@ -93,8 +83,18 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RatingsUpdater/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
+            <state relative-caret-position="1214">
               <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RatingScrape/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -155,7 +155,6 @@
         <option value="$PROJECT_DIR$/RatingScrape/models.py" />
         <option value="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/ios_app_review_fragment.html" />
         <option value="$PROJECT_DIR$/RatingScrape/views.py" />
-        <option value="$PROJECT_DIR$/RatingScrape/__init__.py" />
         <option value="$PROJECT_DIR$/RatingScrape/views/sort_methods.py" />
         <option value="$PROJECT_DIR$/RatingScrape/views/old_views.py" />
         <option value="$PROJECT_DIR$/RatingScrape/views/__init__.py" />
@@ -165,6 +164,7 @@
         <option value="$PROJECT_DIR$/RatingScrape/static/RatingScrape/dashboard.ts" />
         <option value="$PROJECT_DIR$/RatingsUpdater/settings.py" />
         <option value="$PROJECT_DIR$/RatingScrape/views/filter_methods.py" />
+        <option value="$PROJECT_DIR$/RatingScrape/__init__.py" />
       </list>
     </option>
   </component>
@@ -240,46 +240,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="RatingsUpdater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RatingScrape" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RatingsUpdater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RatingsUpdater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RatingScrape" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RatingsUpdater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RatingsUpdater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RatingScrape" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -878,14 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RatingScrape/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RatingScrape/views/sort_methods.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -949,14 +901,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RatingsUpdater/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RatingScrape/views/old_views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -990,6 +934,22 @@
           <folding>
             <element signature="e#31#63#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RatingsUpdater/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1214">
+          <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RatingScrape/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

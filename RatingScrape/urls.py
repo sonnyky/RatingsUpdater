@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^get_ratings/', views.get_ratings, name='get_ratings'),
     url(r'^get_reviews/', views.get_reviews, name='get_reviews'),
     url(r'^get_json/', views.get_json, name='get_json'),
+    url(r'^filter_by_keyword/', views.filter_by_keyword, name='filter_by_keyword'),
 ]

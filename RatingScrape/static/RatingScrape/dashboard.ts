@@ -5,10 +5,12 @@
 module dashboard{
 
 	export class dashboardClass{
+	 cookieValue:any = null;
+     csrftoken:any = null;
 		constructor(){
 			var $=jQuery;
 			var sel:string;
-
+            this.csrftoken = this.getCookie('csrftoken');
 			var review_tab_touch_param = {
 				target:"#reviews_tab",
 				callback_end:()=>{
@@ -21,6 +23,12 @@ module dashboard{
 					this.getReviews();
 				}
 			}
+			var filter_review_btn_param = {
+				target:"#filter_by_keyword",
+				callback_end:()=>{
+					this.filterByKeyword("ロード");
+				}
+			}
 			var rating_view_btn_param = {
 			    target:"#ratings_tab",
 				callback_end:()=>{
@@ -30,6 +38,7 @@ module dashboard{
 			new util.touchClass(review_tab_touch_param);
 			new util.touchClass(get_review_btn_param);
 			new util.touchClass(rating_view_btn_param);
+			new util.touchClass(filter_review_btn_param);
 		}
 		
 		reviewView(){
@@ -47,7 +56,7 @@ module dashboard{
 				url: "/ios_app_review_fragment/",
 				success: function (response) {
 					$("#ios_app_review").html(response);
-					
+					console.log("Review list refreshed");
 				}
 			});
 		}
@@ -58,6 +67,19 @@ module dashboard{
 				url: "/get_reviews/",
 				success: ()=> {
 					this.refreshReviews();
+				}
+			});
+		}
+		filterByKeyword(filter_word:string){
+		var encoded_string = encodeURIComponent(filter_word);
+		console.log(this.csrftoken);
+			$.ajax({
+				type: "POST",
+				url: "/filter_by_keyword/",
+				headers: { "X-CSRFToken": this.csrftoken },
+				data: {filter_to_use : encoded_string},
+				success: (response)=> {
+				    $("#ios_app_review").html(response);
 				}
 			});
 		}
@@ -79,7 +101,22 @@ module dashboard{
 				}
 			});
     	}
-		
+
+    	getCookie(name) {
+
+            if (document.cookie && document.cookie != '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        this.cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return this.cookieValue;
+        }
 		
     }
 }

@@ -13,7 +13,7 @@
 </head>
 <body>
     <h1>Today is {% now "jS F Y H:i" %}</h1>
-
+    {% csrf_token %}
      <h1>
             <ul class="nav nav-pills">
             <li id="ratings_tab" class="active"><a>Ratings</a></li>
@@ -47,6 +47,7 @@
 
     <div id="ios_app_get_review_btn" style="display:none">
         <button id="get_reviews_button">Get Reviews</button>
+        <button id="filter_by_keyword">Filter With Keyword ログイン</button>
          <form action="{% url 'RatingScrape:delete_all_review_entry' %}" method="post">
             {% csrf_token %}
             <input type="submit" value="Delete All Reviews" />

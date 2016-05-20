@@ -4,8 +4,8 @@ from django.http import JsonResponse
 from django.core.urlresolvers import reverse
 from django.utils import timezone
 from urllib.request import urlopen
-from .models import RatingStars
-from .models import UserReviewComments
+from ..models import RatingStars
+from ..models import UserReviewComments
 import json
 from django.core import serializers
 import logging
@@ -96,7 +96,3 @@ def get_reviews(request):
 
 def go_to_top_page(request):
     return HttpResponseRedirect(reverse("RatingScrape:index"))
-
-def get_json(request):
-
-    return HttpResponse(json.dumps({'username':"TEST"}), content_type='application/json')

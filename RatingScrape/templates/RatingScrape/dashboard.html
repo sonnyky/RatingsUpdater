@@ -47,7 +47,8 @@
 
     <div id="ios_app_get_review_btn" style="display:none">
         <button id="get_reviews_button">Get Reviews</button>
-        <button id="filter_by_keyword">Filter With Keyword ログイン</button>
+        <button id="filter_by_keyword">Filter With Keyword</button>
+        <input id="filter_keyword_input" type="text" name="firstname">
          <form action="{% url 'RatingScrape:delete_all_review_entry' %}" method="post">
             {% csrf_token %}
             <input type="submit" value="Delete All Reviews" />

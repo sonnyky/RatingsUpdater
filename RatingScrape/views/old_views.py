@@ -22,12 +22,15 @@ user_comments = urlopen("http://itunes.apple.com/jp/rss/customerreviews/id="+str
 user_comments_data = json.loads(user_comments)
 
 #This is for getting app ratings from Google Play
-android_app_id = "com.snkplaymore.android014"
+android_app_id = "jp.co.rakuten.android"
 android_app_data_content = requests.get('https://play.google.com/store/apps/details?id='+android_app_id+'&hl=ja')
 soup = bs4.BeautifulSoup(android_app_data_content.text, "html.parser")
 android_app_rating = soup.find_all('div', attrs={'class': 'score'})
 for item in android_app_rating:
     print(item.text)
+
+android_app_review = soup.find_all('div', attrs={'class': 'review-text'})
+print(len(android_app_review))
 
 # Create your views here.
 def index(request):
@@ -40,6 +43,7 @@ def ios_app_review_fragment(request):
     UserReviewComments.objects.all()
     context = dict()
     context['reviews'] = UserReviewComments.objects.all()
+    context['length'] = len(UserReviewComments.objects.all())
     return render(request, 'RatingScrape/ios_app_review_fragment.html', context)
 
 def ios_app_rating_fragment(request):

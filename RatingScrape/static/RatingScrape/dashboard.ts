@@ -7,10 +7,13 @@ module dashboard{
 	export class dashboardClass{
 	 cookieValue:any = null;
      csrftoken:any = null;
+
+     filter_keyword:string;
 		constructor(){
 			var $=jQuery;
 			var sel:string;
             this.csrftoken = this.getCookie('csrftoken');
+            this.filter_keyword = "NONE";
 			var review_tab_touch_param = {
 				target:"#reviews_tab",
 				callback_end:()=>{
@@ -26,7 +29,8 @@ module dashboard{
 			var filter_review_btn_param = {
 				target:"#filter_by_keyword",
 				callback_end:()=>{
-					this.filterByKeyword("ロード");
+				    this.getFilterKeyword();
+					this.filterByKeyword();
 				}
 			}
 			var rating_view_btn_param = {
@@ -70,9 +74,8 @@ module dashboard{
 				}
 			});
 		}
-		filterByKeyword(filter_word:string){
-		var encoded_string = encodeURIComponent(filter_word);
-		console.log(this.csrftoken);
+		filterByKeyword(){
+		var encoded_string = encodeURIComponent(this.filter_keyword);
 			$.ajax({
 				type: "POST",
 				url: "/filter_by_keyword/",
@@ -116,6 +119,10 @@ module dashboard{
                 }
             }
             return this.cookieValue;
+        }
+
+        getFilterKeyword(){
+            this.filter_keyword = $("#filter_keyword_input").val();
         }
 		
     }

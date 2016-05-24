@@ -10,6 +10,7 @@ var dashboard;
             var $ = jQuery;
             var sel;
             this.csrftoken = this.getCookie('csrftoken');
+            this.filter_keyword = "NONE";
             var review_tab_touch_param = {
                 target: "#reviews_tab",
                 callback_end: function () {
@@ -25,7 +26,8 @@ var dashboard;
             var filter_review_btn_param = {
                 target: "#filter_by_keyword",
                 callback_end: function () {
-                    _this.filterByKeyword("ロード");
+                    _this.getFilterKeyword();
+                    _this.filterByKeyword();
                 }
             };
             var rating_view_btn_param = {
@@ -69,9 +71,8 @@ var dashboard;
                 }
             });
         };
-        dashboardClass.prototype.filterByKeyword = function (filter_word) {
-            var encoded_string = encodeURIComponent(filter_word);
-            console.log(this.csrftoken);
+        dashboardClass.prototype.filterByKeyword = function () {
+            var encoded_string = encodeURIComponent(this.filter_keyword);
             $.ajax({
                 type: "POST",
                 url: "/filter_by_keyword/",
@@ -110,6 +111,9 @@ var dashboard;
                 }
             }
             return this.cookieValue;
+        };
+        dashboardClass.prototype.getFilterKeyword = function () {
+            this.filter_keyword = $("#filter_keyword_input").val();
         };
         return dashboardClass;
     }());

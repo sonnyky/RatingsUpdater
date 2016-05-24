@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="390101b0-21ef-4e98-a008-7655c4325f0e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RatingScrape/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RatingScrape/views/android_common.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/static/RatingScrape/dashboard.js" afterPath="$PROJECT_DIR$/RatingScrape/static/RatingScrape/dashboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/static/RatingScrape/dashboard.js.map" afterPath="$PROJECT_DIR$/RatingScrape/static/RatingScrape/dashboard.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/static/RatingScrape/dashboard.ts" afterPath="$PROJECT_DIR$/RatingScrape/static/RatingScrape/dashboard.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/dashboard.html" afterPath="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/ios_app_review_fragment.html" afterPath="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/ios_app_review_fragment.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/views/__init__.py" afterPath="$PROJECT_DIR$/RatingScrape/views/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/views/filter_methods.py" afterPath="$PROJECT_DIR$/RatingScrape/views/filter_methods.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/views/old_views.py" afterPath="$PROJECT_DIR$/RatingScrape/views/old_views.py" />
     </list>
     <ignored path="RatingsUpdater.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,24 +32,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RatingScrape/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="11" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="11" />
-              <folding />
+            <state relative-caret-position="726">
+              <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filter_methods.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RatingScrape/views/filter_methods.py">
+      <file leaf-file-name="ios_app_review_fragment.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RatingScrape/templates/RatingScrape/ios_app_review_fragment.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="18" column="106" selection-start-line="18" selection-start-column="106" selection-end-line="18" selection-end-column="106" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="198">
+              <caret line="9" column="76" selection-start-line="9" selection-start-column="76" selection-end-line="9" selection-end-column="76" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -49,49 +57,17 @@
       <file leaf-file-name="old_views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RatingScrape/views/old_views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RatingScrape/views/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+            <state relative-caret-position="572">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding>
-                <marker date="1463674532738" expanded="true" signature="0:52" placeholder="import ..." />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RatingScrape/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding>
-                <element signature="e#31#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RatingsUpdater/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1214">
-              <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/RatingScrape/__init__.py">
+      <file leaf-file-name="android_common.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RatingScrape/views/android_common.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -100,11 +76,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RatingScrape/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+              <folding>
+                <element signature="e#31#63#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="dashboard.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RatingScrape/static/RatingScrape/dashboard.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+            <state relative-caret-position="506">
+              <caret line="83" column="34" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -113,8 +101,8 @@
       <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RatingScrape/templates/RatingScrape/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="486">
+              <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -153,18 +141,19 @@
         <option value="$PROJECT_DIR$/RatingScrape/tests.py" />
         <option value="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/ios_app_rating_fragment.html" />
         <option value="$PROJECT_DIR$/RatingScrape/models.py" />
-        <option value="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/ios_app_review_fragment.html" />
         <option value="$PROJECT_DIR$/RatingScrape/views.py" />
         <option value="$PROJECT_DIR$/RatingScrape/views/sort_methods.py" />
-        <option value="$PROJECT_DIR$/RatingScrape/views/old_views.py" />
-        <option value="$PROJECT_DIR$/RatingScrape/views/__init__.py" />
         <option value="$PROJECT_DIR$/RatingScrape/static/thirdparty/js-cookie.js" />
-        <option value="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/dashboard.html" />
         <option value="$PROJECT_DIR$/RatingScrape/urls.py" />
-        <option value="$PROJECT_DIR$/RatingScrape/static/RatingScrape/dashboard.ts" />
         <option value="$PROJECT_DIR$/RatingsUpdater/settings.py" />
-        <option value="$PROJECT_DIR$/RatingScrape/views/filter_methods.py" />
         <option value="$PROJECT_DIR$/RatingScrape/__init__.py" />
+        <option value="$PROJECT_DIR$/RatingScrape/static/RatingScrape/dashboard.ts" />
+        <option value="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/dashboard.html" />
+        <option value="$PROJECT_DIR$/RatingScrape/views/filter_methods.py" />
+        <option value="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/ios_app_review_fragment.html" />
+        <option value="$PROJECT_DIR$/RatingScrape/views/android_common.py" />
+        <option value="$PROJECT_DIR$/RatingScrape/views/__init__.py" />
+        <option value="$PROJECT_DIR$/RatingScrape/views/old_views.py" />
       </list>
     </option>
   </component>
@@ -199,7 +188,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -261,6 +249,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RatingsUpdater" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RatingsUpdater" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RatingScrape" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RatingScrape" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RatingsUpdater" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RatingsUpdater" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RatingScrape" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -289,6 +317,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -533,29 +562,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/RatingsUpdater/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RatingScrape/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RatingScrape/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/RatingScrape/views.py" />
     <entry file="file://$PROJECT_DIR$/RatingScrape/templates/RatingScrape/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -571,7 +578,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
+          <folding>
+            <element signature="e#31#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -586,18 +595,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RatingScrape/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/RatingScrape/views.py" />
     <entry file="file://$PROJECT_DIR$/RatingScrape/templates/RatingScrape/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -613,7 +617,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
+          <folding>
+            <element signature="e#31#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -628,18 +634,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RatingScrape/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/RatingScrape/views.py" />
     <entry file="file://$PROJECT_DIR$/RatingScrape/templates/RatingScrape/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -655,7 +656,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
+          <folding>
+            <element signature="e#31#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -670,18 +673,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RatingScrape/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="6" column="36" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/RatingScrape/views.py" />
     <entry file="file://$PROJECT_DIR$/RatingScrape/static/RatingScrape/common.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -704,7 +702,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#31#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -719,18 +719,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RatingScrape/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="6" column="89" selection-start-line="6" selection-start-column="89" selection-end-line="6" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/RatingScrape/views.py" />
     <entry file="file://$PROJECT_DIR$/RatingScrape/templates/RatingScrape/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -753,7 +748,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="5" column="47" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
-          <folding />
+          <folding>
+            <element signature="e#31#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -818,7 +815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" column="15" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -826,7 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -834,58 +829,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RatingScrape/views/sort_methods.py">
+    <entry file="file://$PROJECT_DIR$/RatingScrape/views.py" />
+    <entry file="file://$PROJECT_DIR$/RatingScrape/static/thirdparty/js-cookie.js" />
+    <entry file="file://$PROJECT_DIR$/RatingScrape/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="89" selection-start-line="6" selection-start-column="89" selection-end-line="6" selection-end-column="89" />
-          <folding>
-            <element signature="e#0#58#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RatingScrape/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RatingScrape/views/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-          <folding>
-            <marker date="1463674532738" expanded="true" signature="0:52" placeholder="import ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RatingScrape/static/thirdparty/js-cookie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="150" column="4" selection-start-line="150" selection-start-column="4" selection-end-line="150" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RatingScrape/templates/RatingScrape/ios_app_review_fragment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RatingScrape/templates/RatingScrape/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="486">
+          <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
           <folding>
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -895,24 +855,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RatingScrape/static/RatingScrape/dashboard.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+        <state relative-caret-position="506">
+          <caret line="83" column="34" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RatingScrape/views/old_views.py">
+    <entry file="file://$PROJECT_DIR$/RatingScrape/views/file.txt.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RatingScrape/views/sort_methods.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="6" column="89" selection-start-line="6" selection-start-column="89" selection-end-line="6" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RatingsUpdater/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-62">
+          <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RatingScrape/views/android_common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RatingScrape/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding />
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding>
+            <element signature="e#31#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RatingScrape/models.py">
+    <entry file="file://$PROJECT_DIR$/RatingScrape/views/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="11" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="11" />
+        <state relative-caret-position="66">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RatingScrape/templates/RatingScrape/ios_app_review_fragment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="76" selection-start-line="9" selection-start-column="76" selection-end-line="9" selection-end-column="76" />
           <folding />
         </state>
       </provider>
@@ -920,36 +924,30 @@
     <entry file="file://$PROJECT_DIR$/RatingScrape/views/filter_methods.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
-          <caret line="18" column="106" selection-start-line="18" selection-start-column="106" selection-end-line="18" selection-end-column="106" />
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="19" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RatingScrape/urls.py">
+    <entry file="file://$PROJECT_DIR$/RatingScrape/views/old_views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="572">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <element signature="e#31#63#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RatingsUpdater/settings.py">
+    <entry file="file://$PROJECT_DIR$/RatingScrape/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1214">
-          <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RatingScrape/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="726">
+          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

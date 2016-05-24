@@ -14,7 +14,7 @@ def get_json(request):
 
 def filter_by_keyword(request):
     filter_string = request.POST.get('filter_to_use')
-
     context = dict()
     context['reviews'] = UserReviewComments.objects.filter(comment__icontains=unquote(filter_string,'utf-8'))
+    context['length'] = len(context['reviews'])
     return render(request, 'RatingScrape/ios_app_review_fragment.html', context)

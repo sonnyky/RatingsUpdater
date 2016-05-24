@@ -7,6 +7,7 @@
             <li class="list-group-item">Version Rated :  {{ review.version_rated }}</li>
             <li class="list-group-item">Comment :  {{ review.comment }}</li>
             <li class="list-group-item">ID :  {{ review.review_id }}</li>
+            <li class="list-group-item">Count :   {{ forloop.counter }} / {{ length }}</li>
         </ul>
         <form action="{% url 'RatingScrape:delete_review_entry' review.id %}" method="post">
             {% csrf_token %}

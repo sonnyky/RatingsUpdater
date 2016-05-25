@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="390101b0-21ef-4e98-a008-7655c4325f0e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/android_app_review_fragment.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/android_dashboard.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/RatingScrape/views/file.txt.txt" afterPath="$PROJECT_DIR$/RatingScrape/static/RatingScrape/android_dashboard.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/dashboard.html" afterPath="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/urls.py" afterPath="$PROJECT_DIR$/RatingScrape/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/views/android_common.py" afterPath="$PROJECT_DIR$/RatingScrape/views/android_common.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/views/old_views.py" afterPath="$PROJECT_DIR$/RatingScrape/views/old_views.py" />
     </list>
     <ignored path="RatingsUpdater.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,8 +60,8 @@
       <file leaf-file-name="android_common.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RatingScrape/views/android_common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="46" column="66" selection-start-line="46" selection-start-column="66" selection-end-line="46" selection-end-column="66" />
+            <state relative-caret-position="461">
+              <caret line="53" column="55" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -936,8 +929,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RatingScrape/views/android_common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="46" column="66" selection-start-line="46" selection-start-column="66" selection-end-line="46" selection-end-column="66" />
+        <state relative-caret-position="461">
+          <caret line="53" column="55" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>

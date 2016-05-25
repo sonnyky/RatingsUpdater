@@ -19,7 +19,7 @@ print(len(android_app_review))
 for item in android_app_review:
     print(item.text)
 
-feature_reviews_android = soup.findAll('div', attrs={'class': 'featured-review'})
+feature_reviews_android = soup.findAll('div', attrs={'class': 'single-review'})
 
 def android_dashboard_index(request):
 
@@ -43,8 +43,14 @@ def get_android_json_test(request):
         review_title = item.find('span', attrs={'class': 'review-title'})
         single_review_data["review_title"] = review_title.get_text()
 
-        review_body = item.find('div', attrs={'class': 'review-text'})
+        review_body = item.find('div', attrs={'class': 'review-body'})
         single_review_data["review_body"] = review_body.get_text()
         review_data.append(single_review_data)
+
+        star_rating = item.find('div', attrs={'class': 'tiny-star'})['aria-label']
+        single_review_data["star_rating_text"] = star_rating
+
+        review_date = item.find('span', attrs={'class': 'review-date'})
+        single_review_data["review_date"] = review_date.get_text()
 
     return HttpResponse(json.dumps(review_data), content_type='application/json')

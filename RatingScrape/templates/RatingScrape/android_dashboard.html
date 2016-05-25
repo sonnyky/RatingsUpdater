@@ -9,17 +9,12 @@
     <title>Dashboard</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'util/touchClass.js' %}"></script>
-    <script type="text/javascript" src="{% static 'RatingScrape/dashboard.js' %}"></script>
+    <script type="text/javascript" src="{% static 'RatingScrape/android_dashboard.js' %}"></script>
 </head>
 <body>
     <h1>Today is {% now "jS F Y H:i" %}</h1>
     {% csrf_token %}
-    <form action="{% url 'RatingScrape:android_dashboard_index' %}" method="post">
-        {% csrf_token %}
-        <input type="submit" value="Show Android Dashboard" />
-    </form>
-
-
+    <button id="get_android_json_test">Get Android JSON test</button>
      <h1>
             <ul class="nav nav-pills">
             <li id="ratings_tab" class="active"><a>Ratings</a></li>
@@ -28,13 +23,13 @@
      </h1>
 
     <div id="ios_app_get_rating_btn">
-        <form action="{% url 'RatingScrape:get_ratings' %}" method="post">
+        <form action="{% url 'RatingScrape:get_android_ratings' %}" method="post">
             {% csrf_token %}
             <input type="submit" value="Get Ratings" />
         </form>
     </div>
 
-    <div id="ios_app_rating">
+    <div id="android_app_rating">
         <div class="user_ratings">
             {% for rate in ratings %}
                 <div class="rating-box">
@@ -42,7 +37,7 @@
                     <h2>Date added : {{ rate.time_stamp }}</h2>
                     <h2>Ratings for current version (Stars) : {{ rate.star_number }}</h2>
                     <h2>ID : {{ rate.id }}</h2>
-                    <form action="{% url 'RatingScrape:delete_entry' rate.id %}" method="post">
+                    <form action="{% url 'RatingScrape:delete_android_entry' rate.id %}" method="post">
                         {% csrf_token %}
                         <input type="submit" value="Delete" />
                     </form>
@@ -51,26 +46,25 @@
         </div>
     </div>
 
-    <div id="ios_app_get_review_btn" style="display:none">
-        <button id="get_reviews_button">Get Reviews</button>
-        <button id="filter_by_keyword">Filter With Keyword</button>
-        <input id="filter_keyword_input" type="text" name="firstname">
-         <form action="{% url 'RatingScrape:delete_all_review_entry' %}" method="post">
+    <div id="android_app_get_review_btn" style="display:none">
+        <button id="get_android_reviews_button">Get Reviews</button>
+        <button id="android_filter_by_keyword">Filter With Keyword</button>
+        <input id="android_filter_keyword_input" type="text" name="firstname">
+         <form action="{% url 'RatingScrape:delete_all_android_review_entry' %}" method="post">
             {% csrf_token %}
             <input type="submit" value="Delete All Reviews" />
         </form>
     </div>
-    <div id="ios_app_review" style="display:none">
+    <div id="android_app_review" style="display:none">
 
     </div>
 
 </body>
 
 <script>
-   $(document).ready(function(){
-			new dashboard.dashboardClass();
+ $(document).ready(function(){
+			new android_dashboard.androidDashboardClass();
 		})
-
 </script>
 
 </html>

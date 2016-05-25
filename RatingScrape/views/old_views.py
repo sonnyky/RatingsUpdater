@@ -21,16 +21,6 @@ content_data = json.loads(content)
 user_comments = urlopen("http://itunes.apple.com/jp/rss/customerreviews/id="+str(app_id)+"/json").read().decode("utf8")
 user_comments_data = json.loads(user_comments)
 
-#This is for getting app ratings from Google Play
-android_app_id = "jp.co.rakuten.android"
-android_app_data_content = requests.get('https://play.google.com/store/apps/details?id='+android_app_id+'&hl=ja')
-soup = bs4.BeautifulSoup(android_app_data_content.text, "html.parser")
-android_app_rating = soup.find_all('div', attrs={'class': 'score'})
-for item in android_app_rating:
-    print(item.text)
-
-android_app_review = soup.find_all('div', attrs={'class': 'review-text'})
-print(len(android_app_review))
 
 # Create your views here.
 def index(request):

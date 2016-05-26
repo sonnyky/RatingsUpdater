@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 import json
+from datetime import date
+
 from django.core import serializers
 import requests
 import bs4
@@ -48,9 +50,19 @@ def get_android_json_test(request):
         review_data.append(single_review_data)
 
         star_rating = item.find('div', attrs={'class': 'tiny-star'})['aria-label']
-        single_review_data["star_rating_text"] = star_rating
+        single_review_data["star_rating_text"] = chunks(star_rating,6,1)
 
-        review_date = item.find('span', attrs={'class': 'review-date'})
-        single_review_data["review_date"] = review_date.get_text()
+        review_timestamp = item.find('span', attrs={'class': 'review-date'})
+        review_timestamp_text = review_timestamp.get_text()
+        review_date_text = (review_timestamp_text.rsplit('月',1)[1]).rsplit('日',1)[0]
+        review_date_month = (review_timestamp_text.rsplit('月',1)[0]).rsplit('年',1)[1]
+        review_date_year = review_timestamp_text.rsplit('年',1)[0]
+        review_date_object = date(int(review_date_year), int(review_date_month), int(review_date_text))
+        single_review_data["review_date"] = review_date_object.strftime('Year %Y Month %m Date %d')
 
     return HttpResponse(json.dumps(review_data), content_type='application/json')
+
+def chunks(string, start, end):
+    """Produce `n`-character chunks from `s`."""
+    return string[start:start+end]
+

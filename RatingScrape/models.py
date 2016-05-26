@@ -23,6 +23,21 @@ class RatingStars(models.Model):
         getattr(self, key)
         setattr(self, key, value)
 
+class AndroidRatingStars(models.Model):
+
+    star_number = models.TextField(max_length=255 , default="Default")
+    time_stamp = models.DateTimeField(default=datetime.datetime.now, blank=True)
+
+    def __str__(self):
+        return str(self.title)
+
+    def was_published_recently(self):
+        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+
+    def update_field(self, key, value):
+        getattr(self, key)
+        setattr(self, key, value)
+
 class UserReviewComments(models.Model):
     author = models.TextField(max_length= 255, default="DEFAULT")
     comment = models.TextField(max_length= 255, default="DEFAULT")

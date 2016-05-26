@@ -17,12 +17,13 @@
     <button id="get_android_json_test">Get Android JSON test</button>
      <h1>
             <ul class="nav nav-pills">
-            <li id="ratings_tab" class="active"><a>Ratings</a></li>
-            <li id="reviews_tab"><a>Reviews</a></li>
+            <li id="android_ratings_tab" class="active"><a>Ratings</a></li>
+            <li id="android_reviews_tab"><a>Reviews</a></li>
             </ul>
      </h1>
 
-    <div id="ios_app_get_rating_btn">
+
+    <div id="android_app_get_rating_btn">
         <form action="{% url 'RatingScrape:get_android_ratings' %}" method="post">
             {% csrf_token %}
             <input type="submit" value="Get Ratings" />
@@ -33,11 +34,10 @@
         <div class="user_ratings">
             {% for rate in ratings %}
                 <div class="rating-box">
-                    <h2>Title : {{ rate.title }}</h2>
                     <h2>Date added : {{ rate.time_stamp }}</h2>
                     <h2>Ratings for current version (Stars) : {{ rate.star_number }}</h2>
                     <h2>ID : {{ rate.id }}</h2>
-                    <form action="{% url 'RatingScrape:delete_android_entry' rate.id %}" method="post">
+                    <form action="{% url 'RatingScrape:delete_android_rating_entry' rate.id %}" method="post">
                         {% csrf_token %}
                         <input type="submit" value="Delete" />
                     </form>

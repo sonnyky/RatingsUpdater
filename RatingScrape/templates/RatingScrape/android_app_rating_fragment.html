@@ -1,0 +1,13 @@
+<div class="user_ratings">
+    {% for rate in ratings %}
+        <div class="rating-box">
+            <h2>Date added : {{ rate.time_stamp }}</h2>
+            <h2>Ratings for current version (Stars) : {{ rate.star_number }}</h2>
+            <h2>ID : {{ rate.id }}</h2>
+            <form action="{% url 'RatingScrape:delete_android_rating_entry' rate.id %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Delete" />
+            </form>
+        </div>
+    {% endfor %}
+  </div>

@@ -22,4 +22,3 @@ var util;
     }());
     util.touchClass = touchClass;
 })(util || (util = {}));
-//# sourceMappingURL=touchClass.js.map

@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
+from ..models import AndroidRatingStars
+
 import json
 from datetime import date
 
@@ -14,7 +16,7 @@ android_app_data_content = requests.get('https://play.google.com/store/apps/deta
 soup = bs4.BeautifulSoup(android_app_data_content.text, "html.parser")
 android_app_rating = soup.find_all('div', attrs={'class': 'score'})
 for item in android_app_rating:
-    print(item.text)
+    app_rating = item.text
 
 android_app_review = soup.find_all('div', attrs={'class': 'review-text'})
 print(len(android_app_review))
@@ -24,10 +26,30 @@ for item in android_app_review:
 feature_reviews_android = soup.findAll('div', attrs={'class': 'single-review'})
 
 def android_dashboard_index(request):
+    AndroidRatingStars.objects.all()
+    context = dict()
+    context['ratings'] = AndroidRatingStars.objects.all()
+    return render(request, 'RatingScrape/android_dashboard.html', context)
 
-    return render(request, 'RatingScrape/android_dashboard.html')
+def android_app_rating_fragment(request):
+    AndroidRatingStars.objects.all()
+    context = dict()
+    context['ratings'] = AndroidRatingStars.objects.all()
+    return render(request, 'RatingScrape/android_app_rating_fragment.html', context)
+
+def android_app_review_fragment(request):
+    AndroidRatingStars.objects.all()
+    context = dict()
+    context['ratings'] = AndroidRatingStars.objects.all()
+    return render(request, 'RatingScrape/android_app_review_fragment.html', context)
 
 def get_android_ratings(request):
+
+    AndroidRatingStars.objects.create(
+        star_number=app_rating,
+    )
+    context = dict()
+    context['ratings'] = AndroidRatingStars.objects.all()
     return HttpResponseRedirect(reverse("RatingScrape:android_dashboard_index"))
 
 def delete_all_android_review_entry(request):
@@ -35,8 +57,6 @@ def delete_all_android_review_entry(request):
 
 def get_android_json_test(request):
     review_data = []
-
-    #context['data'] = serializers.serialize('json', str(android_app_review))
     for item in feature_reviews_android:
         single_review_data = {}
         author_name = item.find('span', attrs={'class': 'author-name'})
@@ -61,6 +81,10 @@ def get_android_json_test(request):
         single_review_data["review_date"] = review_date_object.strftime('Year %Y Month %m Date %d')
 
     return HttpResponse(json.dumps(review_data), content_type='application/json')
+
+def delete_android_rating_entry(request, entry_id):
+    AndroidRatingStars.objects.get(pk=entry_id).delete()
+    return HttpResponseRedirect(reverse("RatingScrape:android_dashboard_index"))
 
 def chunks(string, start, end):
     """Produce `n`-character chunks from `s`."""

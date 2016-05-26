@@ -4,10 +4,13 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^android', views.android_dashboard_index, name='android_dashboard_index'),
+    url(r'^android/', views.android_dashboard_index, name='android_dashboard_index'),
     url(r'^ios_app_review_fragment/', views.ios_app_review_fragment, name='ios_app_review_fragment'),
+    url(r'^android_app_review_fragment/', views.android_app_review_fragment, name='android_app_review_fragment'),
     url(r'^ios_app_rating_fragment/', views.ios_app_rating_fragment, name='ios_app_rating_fragment'),
+    url(r'^android_app_rating_fragment/', views.android_app_rating_fragment, name='android_app_rating_fragment'),
     url(r'^delete_entry/(?P<entry_id>\d+)$', views.delete_entry, name='delete_entry'),
+    url(r'^delete_android_rating_entry/(?P<entry_id>\d+)$', views.delete_android_rating_entry, name='delete_android_rating_entry'),
     url(r'^delete_review_entry/(?P<review_id>\d+)$', views.delete_review_entry, name='delete_review_entry'),
     url(r'^delete_all_review_entry/', views.delete_all_review_entry, name='delete_all_review_entry'),
     url(r'^delete_all_android_review_entry/', views.delete_all_android_review_entry, name='delete_all_android_review_entry'),

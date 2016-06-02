@@ -10,8 +10,10 @@
             <li class="list-group-item">Count :   {{ forloop.counter }} / {{ length }}</li>
         </ul>
         <form action="{% url 'RatingScrape:delete_review_entry' review.id %}" method="post">
+            <button type="submit" class="btn btn-default">
             {% csrf_token %}
-            <input type="submit" value="Delete" />
+            Delete
+            </button>
         </form>
     </div>
     {% endfor %}

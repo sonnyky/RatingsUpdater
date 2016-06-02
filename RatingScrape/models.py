@@ -47,3 +47,11 @@ class UserReviewComments(models.Model):
 
     def __str__(self):
         return str(self.author)
+
+class AndroidUserReviewComments(models.Model):
+    author = models.TextField(max_length=255, default="DEFAULT")
+    comment = models.TextField(max_length=255, default="DEFAULT")
+    rating_given_by_user = models.TextField(max_length=255, default="DEFAULT")
+
+    def __str__(self):
+        return str(self.author)

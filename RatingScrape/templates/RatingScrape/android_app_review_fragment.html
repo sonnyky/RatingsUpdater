@@ -1,3 +1,18 @@
 <div id="user_reviews">
-
+    {% for review in reviews %}
+    <div class="well">
+        <ul class="list-group">
+            <li class="list-group-item">Author :  {{ review.author }}</li>
+            <li class="list-group-item">Rating :  {{ review.rating_given_by_user }}</li>
+            <li class="list-group-item">Comment :  {{ review.comment }}</li>
+            <li class="list-group-item">Count :   {{ forloop.counter }} / {{ length }}</li>
+        </ul>
+        <form action="{% url 'RatingScrape:delete_android_review_entry' review.id %}" method="post">
+            <button type="submit" class="btn btn-default">
+            {% csrf_token %}
+                Delete
+            </button>
+        </form>
+    </div>
+    {% endfor %}
 </div>

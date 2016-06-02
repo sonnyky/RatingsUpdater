@@ -19,10 +19,10 @@ module util{
 
 		doBindings(){
 			var $ = jQuery;
-			$(this.target).on("touchstart",(e)=>{
+			$(this.target).on("touchstart mousedown",(e)=>{
 				e.preventDefault();
 				});
-			$(this.target).on("touchend",(e)=>{
+			$(this.target).on("touchend mouseup",(e)=>{
 				e.preventDefault();
 				this.callback_end();
 				})

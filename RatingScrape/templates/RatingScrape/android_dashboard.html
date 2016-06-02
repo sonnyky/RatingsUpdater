@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     {% load staticfiles %}
+     <link rel="icon"
+      type="image/png"
+      href="{% static 'RatingScrape/img/favicon_final.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'RatingScrape/common.css' %}" >
     <title>Dashboard</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -12,9 +16,16 @@
     <script type="text/javascript" src="{% static 'RatingScrape/android_dashboard.js' %}"></script>
 </head>
 <body>
-    <h1>Today is {% now "jS F Y H:i" %}</h1>
+     <h1>{% now "Y年 F j日 H:i" %}</h1>
     {% csrf_token %}
-    <button id="get_android_json_test">Get Android JSON test</button>
+
+     <form action="{% url 'RatingScrape:index' %}" method="post">
+         <button type="submit" class="btn btn-primary">
+        {% csrf_token %}
+             Show iOS Dashboard
+         </button>
+    </form>
+
      <h1>
             <ul class="nav nav-pills">
             <li id="android_ratings_tab" class="active"><a>Ratings</a></li>
@@ -23,12 +34,14 @@
      </h1>
 
 
-    <div id="android_app_get_rating_btn">
+
         <form action="{% url 'RatingScrape:get_android_ratings' %}" method="post">
-            {% csrf_token %}
-            <input type="submit" value="Get Ratings" />
+             <button type="submit" class="btn btn-default" id="android_app_get_rating_btn">
+                 Get Ratings
+                {% csrf_token %}
+             </button>
         </form>
-    </div>
+
 
     <div id="android_app_rating">
         <div class="user_ratings">
@@ -38,8 +51,10 @@
                     <h2>Ratings for current version (Stars) : {{ rate.star_number }}</h2>
                     <h2>ID : {{ rate.id }}</h2>
                     <form action="{% url 'RatingScrape:delete_android_rating_entry' rate.id %}" method="post">
+                        <button type="submit" class="btn btn-default">
+                            Delete
                         {% csrf_token %}
-                        <input type="submit" value="Delete" />
+                        </button>
                     </form>
                 </div>
             {% endfor %}
@@ -47,12 +62,14 @@
     </div>
 
     <div id="android_app_get_review_btn" style="display:none">
-        <button id="get_android_reviews_button">Get Reviews</button>
-        <button id="android_filter_by_keyword">Filter With Keyword</button>
-        <input id="android_filter_keyword_input" type="text" name="firstname">
+        <button class="btn btn-default" id="get_android_reviews_button">Get Reviews</button>
+        <button class="btn btn-default" id="android_filter_by_keyword">Filter With Keyword</button>
+        <input style="margin-left:10px" id="android_filter_keyword_input" type="text" name="firstname">
          <form action="{% url 'RatingScrape:delete_all_android_review_entry' %}" method="post">
+             <button class="btn btn-default" type="submit" id="delete_all_android_reviews_btn">
             {% csrf_token %}
-            <input type="submit" value="Delete All Reviews" />
+                 Delete All reviews
+             </button>
         </form>
     </div>
     <div id="android_app_review" style="display:none">

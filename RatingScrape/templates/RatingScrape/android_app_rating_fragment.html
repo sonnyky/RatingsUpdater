@@ -5,8 +5,10 @@
             <h2>Ratings for current version (Stars) : {{ rate.star_number }}</h2>
             <h2>ID : {{ rate.id }}</h2>
             <form action="{% url 'RatingScrape:delete_android_rating_entry' rate.id %}" method="post">
+                <button type="submit" class="btn btn-default">
                 {% csrf_token %}
-                <input type="submit" value="Delete" />
+                Delete
+                </button>
             </form>
         </div>
     {% endfor %}

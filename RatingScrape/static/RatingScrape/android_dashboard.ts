@@ -14,10 +14,11 @@ module android_dashboard{
 			var sel:string;
             this.csrftoken = this.getCookie('csrftoken');
             this.filter_keyword = "NONE";
-			var get_json_param = {
-				target:"#get_android_json_test",
+
+			var get_android_review_btn_param = {
+				target:"#get_android_reviews_button",
 				callback_end:()=>{
-					this.getTestJson();
+					this.getAndroidReviews();
 				}
 			}
 			var review_tab_touch_param = {
@@ -32,25 +33,30 @@ module android_dashboard{
 					this.androidRatingsView();
 				}
 			}
+			var filter_review_btn_param = {
+				target:"#android_filter_by_keyword",
+				callback_end:()=>{
+				    this.getFilterKeyword();
+					this.filterAndroidReviewsByKeyword();
+				}
+			}
 
-			new util.touchClass(get_json_param);
+			new util.touchClass(get_android_review_btn_param);
 			new util.touchClass(review_tab_touch_param);
 			new util.touchClass(rating_view_btn_param);
+			new util.touchClass(filter_review_btn_param);
+
 		}
 
-
-
-
-		getTestJson(){
-            $.ajax({
-                type: "GET",
-                url: "/get_android_json_test/",
-                success: function (response) {
-                 console.log(response);
-                }
-            });
-
-
+		getAndroidReviews(){
+			console.log("Getting reviews")
+			$.ajax({
+				type: "GET",
+				url: "/get_android_reviews/",
+				success: ()=> {
+					this.refreshAndroidReviews();
+				}
+			});
 		}
 
         androidReviewView(){
@@ -67,6 +73,7 @@ module android_dashboard{
 				type: "GET",
 				url: "/android_app_review_fragment/",
 				success: function (response) {
+				    console.log(response);
 					$("#android_app_review").html(response);
 				}
 			});
@@ -107,8 +114,20 @@ module android_dashboard{
         }
 
         getFilterKeyword(){
-            this.filter_keyword = $("#filter_keyword_input").val();
+            this.filter_keyword = $("#android_filter_keyword_input").val();
         }
+        filterAndroidReviewsByKeyword(){
+		var encoded_string = encodeURIComponent(this.filter_keyword);
+			$.ajax({
+				type: "POST",
+				url: "/filter_android_review_by_keyword/",
+				headers: { "X-CSRFToken": this.csrftoken },
+				data: {filter_to_use : encoded_string},
+				success: (response)=> {
+				    $("#android _app_review").html(response);
+				}
+			});
+		}
 
     }
 }

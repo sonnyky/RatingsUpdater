@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="390101b0-21ef-4e98-a008-7655c4325f0e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RatingScrape/tasks.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RatingsUpdater/celery.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/models.py" afterPath="$PROJECT_DIR$/RatingScrape/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/views/old_views.py" afterPath="$PROJECT_DIR$/RatingScrape/views/old_views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingsUpdater/__init__.py" afterPath="$PROJECT_DIR$/RatingsUpdater/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingsUpdater/settings.py" afterPath="$PROJECT_DIR$/RatingsUpdater/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
-    </list>
+    <list default="true" id="390101b0-21ef-4e98-a008-7655c4325f0e" name="Default" comment="" />
     <ignored path="RatingsUpdater.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

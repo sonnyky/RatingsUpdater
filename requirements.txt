@@ -8,6 +8,7 @@ chardet==2.3.0
 dj-database-url==0.3.0
 Django==1.8.5
 django-celery==3.1.17
+django-jsonfield==1.0.0
 gunicorn==19.3.0
 kombu==3.0.35
 psycopg2==2.6.1

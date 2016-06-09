@@ -1,26 +1,22 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
-from django.http import JsonResponse
 from django.core.urlresolvers import reverse
-from django.utils import timezone
 from urllib.request import urlopen
 from ..models import RatingStars
 from ..models import UserReviewComments
 import json
 from django.core import serializers
-import logging
-import requests
-import bs4
+from RatingScrape.tasks import get_ios_ratings_periodic
 
 # This is for getting app ratings from iTunes
 app_id = 419267350
-content = urlopen("https://itunes.apple.com/lookup?id=" + str(app_id) + "&country=jp").read().decode('utf8')
+target_url = "https://itunes.apple.com/lookup?id=" + str(app_id) + "&country=jp"
+content = urlopen(target_url).read().decode('utf8')
 content_data = json.loads(content)
 
 # This is for getting user comments from iTunes
 user_comments = urlopen("http://itunes.apple.com/jp/rss/customerreviews/id="+str(app_id)+"/json").read().decode("utf8")
 user_comments_data = json.loads(user_comments)
-
 
 # Create your views here.
 def index(request):
@@ -43,7 +39,6 @@ def ios_app_rating_fragment(request):
     return render(request, 'RatingScrape/ios_app_rating_fragment.html', context)
 
 def get_ratings(request):
-
     RatingStars.objects.create(
         star_number = content_data['results'][0]['averageUserRatingForCurrentVersion'],
         title = content_data['results'][0]['trackName'],

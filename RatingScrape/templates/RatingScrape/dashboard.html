@@ -25,12 +25,12 @@
     </form>
 
 
-     <h1>
-            <ul class="nav nav-pills">
-            <li id="ratings_tab" class="active"><a>Ratings</a></li>
-            <li id="reviews_tab"><a>Reviews</a></li>
-            </ul>
-     </h1>
+
+    <ul class="nav nav-pills">
+    <li id="ratings_tab" class="active"><a>Ratings</a></li>
+    <li id="reviews_tab"><a>Reviews</a></li>
+    </ul>
+
 
 
         <form action="{% url 'RatingScrape:get_ratings' %}" method="post">
@@ -75,13 +75,15 @@
 
     </div>
 
-</body>
-
 <script>
    $(document).ready(function(){
 			new dashboard.dashboardClass();
 		})
 
 </script>
+
+</body>
+
+
 
 </html>

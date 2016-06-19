@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="390101b0-21ef-4e98-a008-7655c4325f0e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/static/RatingScrape/common.css" afterPath="$PROJECT_DIR$/RatingScrape/static/RatingScrape/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/dashboard.html" afterPath="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/android_dashboard.html" afterPath="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/android_dashboard.html" />
     </list>
     <ignored path="RatingsUpdater.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,11 +43,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="common.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RatingScrape/static/RatingScrape/common.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="286">
               <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="android_dashboard.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RatingScrape/templates/RatingScrape/android_dashboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="583">
+              <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -165,7 +173,6 @@
         <option value="$PROJECT_DIR$/RatingScrape/static/util/touchClass.ts" />
         <option value="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/ios_app_rating_fragment.html" />
         <option value="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/ios_app_review_fragment.html" />
-        <option value="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/android_dashboard.html" />
         <option value="$PROJECT_DIR$/RatingsUpdater/celery.py" />
         <option value="$PROJECT_DIR$/RatingsUpdater/__init__.py" />
         <option value="$PROJECT_DIR$/RatingScrape/admin.py" />
@@ -175,6 +182,7 @@
         <option value="$PROJECT_DIR$/RatingsUpdater/settings.py" />
         <option value="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/dashboard.html" />
         <option value="$PROJECT_DIR$/RatingScrape/static/RatingScrape/common.css" />
+        <option value="$PROJECT_DIR$/RatingScrape/templates/RatingScrape/android_dashboard.html" />
       </list>
     </option>
   </component>
@@ -791,13 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RatingScrape/templates/RatingScrape/android_dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="63" selection-start-line="8" selection-start-column="5" selection-end-line="10" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RatingsUpdater/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -885,6 +886,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RatingScrape/templates/RatingScrape/android_dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
           <folding />
         </state>
       </provider>

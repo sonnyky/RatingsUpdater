@@ -26,21 +26,21 @@
          </button>
     </form>
 
-     <h1>
-            <ul class="nav nav-pills">
-            <li id="android_ratings_tab" class="active"><a>Ratings</a></li>
-            <li id="android_reviews_tab"><a>Reviews</a></li>
-            </ul>
-     </h1>
+
+    <ul class="nav nav-pills">
+    <li id="android_ratings_tab" class="active"><a>Ratings</a></li>
+    <li id="android_reviews_tab"><a>Reviews</a></li>
+    </ul>
 
 
 
-        <form action="{% url 'RatingScrape:get_android_ratings' %}" method="post">
-             <button type="submit" class="btn btn-default" id="android_app_get_rating_btn">
-                 Get Ratings
-                {% csrf_token %}
-             </button>
-        </form>
+
+    <form action="{% url 'RatingScrape:get_android_ratings' %}" method="post">
+         <button type="submit" class="btn btn-default" id="android_app_get_rating_btn">
+             Get Ratings
+            {% csrf_token %}
+         </button>
+    </form>
 
 
     <div id="android_app_rating">
@@ -75,13 +75,14 @@
     <div id="android_app_review" style="display:none">
 
     </div>
-
-</body>
-
+     
 <script>
  $(document).ready(function(){
 			new android_dashboard.androidDashboardClass();
 		})
 </script>
+</body>
+
+
 
 </html>

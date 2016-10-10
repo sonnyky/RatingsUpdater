@@ -44,3 +44,4 @@ Temporary Items
 
 venv
 *.pyc
+celerybeat-schedule.bak

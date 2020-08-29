@@ -2,6 +2,8 @@ __author__ = 'sonny.kurniawan'
 from django.conf.urls import url
 from . import views
 
+app_name = "RatingScrape"
+
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^android/', views.android_dashboard_index, name='android_dashboard_index'),

@@ -42,12 +42,12 @@ INSTALLED_APPS = (
     #'djcelery'
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+   # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'RatingsUpdater.wsgi.application'
 
 #watch out when deploying to heroku and debugging on local, must change HOST and PORT
 
-DATABASES = {'default': dj_database_url.config(default='postgres://postgres:postgres@localhost:5432/django_ratings')}
+DATABASES = {'default': dj_database_url.config(default='postgres://postgres:postgrespa55@localhost:5432/django_ratings')}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

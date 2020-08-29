@@ -9,7 +9,7 @@ dj-database-url==0.3.0
 Django>=2.2.1
 django-celery>=3.1.17
 django-jsonfield>=1.0.0
-gunicorn==19.3.0
+gunicorn==19.5.0
 kombu==3.0.35
 psycopg2>=2.6.1
 python-dateutil==2.4.2
